@@ -1,0 +1,420 @@
+82.
+<?php
+	if (! ($num1 >= 0 or $num2 <= 10) ) {
+		echo '+++';
+	} else {
+		echo '---';
+	}
+?>
+83.
+<?php
+$test = true; 
+
+if ($test === true) {
+		echo '+++';
+	} else {
+		echo '---';
+	}
+?>
+
+<?php
+$test = false; 
+
+if ($test === false) {
+		echo '+++';
+	} else {
+		echo '---';
+	}
+?>
+84.
++++
+
+---
+
+---
+
+---
+
++++
+
+---
+
+
+
+
+
+96.
+<?php
+$day = 15; /
+
+if ($day >= 1 && $day <= 10) {
+    echo 'Первая декада месяца';
+} elseif ($day >= 11 && $day <= 20) {
+    echo 'Вторая декада месяца';
+} elseif ($day >= 21 && $day <= 31) {
+    echo 'Третья декада месяца';
+} else {
+    echo 'Некорректное значение дня';
+}
+?>
+
+<?php
+$day = 32; 
+
+if (!is_numeric($day) || $day < 1 || $day > 31) {
+    echo 'Ошибка: некорректное значение дня. Должно быть от 1 до 31.';
+} else {
+    if ($day >= 1 && $day <= 10) {
+        echo 'Первая декада месяца';
+    } elseif ($day >= 11 && $day <= 20) {
+        echo 'Вторая декада месяца';
+    } elseif ($day >= 21 && $day <= 31) {
+        echo 'Третья декада месяца';
+    }
+}
+?>
+
+97.
+<?php
+$age = 25; // Пример значения
+
+if ($age < 10 || $age > 99) {
+    echo 'Ошибка: число должно быть в диапазоне от 10 до 99.';
+} else {
+    // Находим сумму цифр
+    $sum = ($age % 10) + ($age / 10);
+    
+    if ($sum <= 9) {
+        echo 'Сумма цифр однозначна: ' . $sum;
+    } else {
+        echo 'Сумма цифр двузначна: ' . $sum;
+    }
+}
+?>
+98.
+<?php
+$num = 2; 
+
+switch ($num) {
+    case 1:
+        echo 'Зима';
+        break;
+    case 2:
+        echo 'Весна';
+        break;
+    case 3:
+        echo 'Лето';
+        break;
+    case 4:
+        echo 'Осень';
+        break;
+    default:
+        echo 'Ошибка: значение должно быть от 1 до 4.';
+}
+?>
+101.
+<?php
+$num = -5; // Пример значения
+
+if ($num >= 0) {
+    $res = 1;
+} else {
+    $res = -1;
+}
+
+// Вывод результата
+echo $res;
+?>
+102.
+<?php
+$user = ['name' => 'john', 'age' => 30];
+
+$name = isset($user['name']) ? $user['name'] : 'unknown';
+?>
+103.
+<?php
+$res = $user['name'] ?? $user['surname'] ?? 'empty';
+?>
+104.
+<?php
+$a = 2 * (3 - 1); 
+$b = 6 - 2;       
+
+if ($a == $b) {
+    echo '+++';
+} else {
+    echo '---';
+}
+?>
+
+<?php
+$a = 5 * (7 - 4); 
+$b = 1 + 2 + 7;   
+
+if ($a > $b) {
+    echo 'a>';
+} else {
+    echo 'b>';
+}
+?>
+
+<?php
+$a = 2 ** 4; 
+$b = 4 ** 2; 
+
+if ($a != $b) {
+    echo 'разные';
+} else {
+    echo 'одинаковые';
+}
+?>
+105.
+<?php
+$min = 16; 
+
+if ($min >= 0 && $min <= 19) {
+    echo '1 треть часа';
+}
+
+if ($min >= 20 && $min <= 39) {
+    echo '2 треть часа';
+}
+
+if ($min >= 40 && $min <= 59) {
+    echo '3 треть часа';
+}
+?>
+106.
+<?php
+$arr = [1, 2, 3]; 
+if (count($arr) === 3) {
+    $sum = array_sum($arr);
+    echo 'Сумма элементов массива: ' . $sum;
+} else {
+    echo 'В массиве не 3 элемента.';
+}
+?>
+107.
+<?php
+$str = '1230'; 
+$last = $str[strlen($str) - 1];
+
+if ($last == '0') {
+    echo 'Строка заканчивается на 0.';
+}
+?>
+109.
+<?php
+$month = 5; 
+
+if ($month == 12 || $month == 1 || $month == 2) {
+    echo 'Зима';
+} elseif ($month >= 3 && $month <= 5) {
+    echo 'Весна';
+} elseif ($month >= 6 && $month <= 8) {
+    echo 'Лето';
+} elseif ($month >= 9 && $month <= 11) {
+    echo 'Осень';
+} else {
+    echo 'Некорректный месяц';
+}
+?>
+
+<?php
+$string = 'abcde'; 
+
+if ($string[0] == 'a') {
+    echo 'Первый символ — буква "a".';
+}
+?>
+
+<?php
+$number = 12345; 
+
+if (in_array ($number[0], ['1', '2', '3'] ) ) {
+    echo 'Первый символ — 1, 2 или 3.';
+}
+?>
+
+<?php
+$number = 456; 
+
+$sum = array_sum(str_split($number));
+echo 'Сумма цифр: ' . $sum;
+?>
+
+<?php
+$number = 123456; 
+
+$firstSum = array_sum(str_split(substr($number, 0, 3)));
+$secondSum = array_sum(str_split(substr($number, 3, 3)));
+
+if ($firstSum == $secondSum) {
+    echo 'Сумма первых трех цифр равна сумме последних трех цифр.';
+}
+?>
+85
+<?php
+	$test = true;
+	
+	if ($test) {
+		echo '+++';
+	} else {
+		echo '---';
+	}
+?>
+
+<?php
+	$test = true;
+	
+	if (!$test) {
+		echo '+++';
+	} else {
+		echo '---';
+	}
+?>
+
+<?php
+	$test = true;
+	
+	if (!$test) {
+		echo '+++';
+	} else {
+		echo '---';
+	}
+?>
+
+<?php
+	$test = true;
+	
+	if ($test) {
+		echo '+++';
+	} else {
+		echo '---';
+	}
+?>
+
+
+
+
+  86
+
+---
+
++++
+
++++
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
++++
+
+
+90
+
++++
++++
++++
++++
++++
+---
++++
+
+91
+
++++
+
+---
+
+---
+
+---
+
+---
+
++++
+
++++
+
+---
+
++++
+
++++
+
++++
+
+92
+
+<?php
+	$test = 10;
+	
+	if ($test == 10) {
+		echo 'верно';
+	}
+?>
+
+
+93
+
+<?php
+	echo ($test == 0) ? 'верно' : 'неверно!';
+?>
+ 
+
+<?php
+	$test == 0 && print 'верно';
+?>
+
+
+95
+
+<?php
+	$day = 15; 
+
+	if ($day >= 1 && $day <= 31) {
+		if ($day <= 10) {
+			echo 'Первая декада';
+		} elseif ($day <= 20) {
+			echo 'Вторая декада';
+		} else {
+			echo 'Третья декада';
+		}
+	} else {
+		echo 'Некорректное число';
+	}
+?>
+
+
+108
+
+<?php
+	$number = 7; 
+
+	if ($number % 2 == 0) {
+		echo 'Четное число';
+	} else {
+		echo 'Нечетное число';
+	}
+?>
+
+
+<?php
+	$number = 9; 
+
+	if ($number % 3 == 0) {
+		echo 'Число делится на 3';
+	} else {
+		echo 'Число не делится на 3';
+	}
+?>
